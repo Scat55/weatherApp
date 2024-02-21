@@ -1,7 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="main-window"></div>
+  <div class="main-window">
+    <InputUi />
+  </div>
 </template>
 
 <style scoped lang="scss">
