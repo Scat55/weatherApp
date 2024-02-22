@@ -1,8 +1,24 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useWeatherAPIStore } from '@/stores/getWeatherInfo';
+
+const weatherAPI = useWeatherAPIStore();
+const searcCity = ref<string>('');
+
+// Передаем значение из инпута в стор
+const test = (city: string) => {
+  weatherAPI.getWeatherInfo(city);
+};
+</script>
 
 <template>
   <div class="input">
-    <input class="input__main" type="text" placeholder="Название города..." />
+    <input
+      class="input__main"
+      type="text"
+      placeholder="Название города..."
+      v-model="searcCity"
+      @keyup.enter="test(searcCity)"
+    />
   </div>
 </template>
 
