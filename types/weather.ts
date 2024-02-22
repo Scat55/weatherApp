@@ -1,6 +1,6 @@
 export interface WeatherData {
   temp: number;
   decription: string;
-  nameCity: string;
+  name: string;
   iconUrl: string;
 }
