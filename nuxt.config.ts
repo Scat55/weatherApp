@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   },
   css: ['/assets/styles/index.scss'],
   modules: [
-    '@pinia/nuxt',
+    '@pinia/nuxt', '@element-plus/nuxt',
     [
       '@nuxtjs/google-fonts',
       {
