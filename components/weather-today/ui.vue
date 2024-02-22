@@ -35,11 +35,18 @@ const yearNow = date.getFullYear();
       <span class="weather-data__description">{{
         weatherInfo.weatherData.weather[0].description
       }}</span>
+
+      <span class="temp__info">
+        {{ (weatherInfo.weatherData.main.temp - 273.15).toFixed() }}
+        <sup>o</sup>C
+      </span>
       <div class="weather-data__temp">
-        <span class="temp__info">
-          {{ (weatherInfo.weatherData.main.temp - 273.15).toFixed() }}
-          <sup>o</sup>C
-        </span>
+        <div class="weather-data__wind">
+          <span
+            >Скорость ветра: {{ weatherInfo.weatherData.wind.speed }} м/с</span
+          >
+          <span>Влажность : {{ weatherInfo.weatherData.main.humidity }}%</span>
+        </div>
         <img
           :src="`https://openweathermap.org/img/wn/${weatherInfo.weatherData.weather[0].icon}@2x.png`"
           alt="weatherIcon"
@@ -79,12 +86,20 @@ const yearNow = date.getFullYear();
       align-items: center;
       justify-content: center;
     }
+    &__wind {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: #fff;
+    }
   }
 }
 .temp {
   &__info {
     color: #fff;
-    font-size: 18px;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 10px;
   }
 }
 </style>
