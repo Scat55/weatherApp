@@ -17,13 +17,16 @@ const test = (city: string) => {
       type="text"
       placeholder="Название города..."
       v-model="searcCity"
-      @keyup.enter="test(searcCity)"
     />
+    <button class="input__searchIcon" @click="test(searcCity)">
+      <img src="../../assets/images/search.svg" alt="Search icon" />
+    </button>
   </div>
 </template>
 
 <style scoped lang="scss">
 .input {
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
@@ -37,6 +40,22 @@ const test = (city: string) => {
 
     &:focus {
       box-shadow: 0 0 5px 2px #85656a;
+    }
+  }
+
+  &__searchIcon {
+    position: absolute;
+    top: 5%;
+    right: 30.5%;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+    img {
+      width: 100%;
     }
   }
 }
