@@ -1,10 +1,6 @@
 import axios, { AxiosError } from 'axios';
 import { defineStore } from 'pinia';
-
-interface WeatherData {
-  temp: number;
-  humidity: number;
-}
+import { type WeatherData } from '../types/weather';
 
 const apiKey = import.meta.env.VITE_API_KEY_WEATHER;
 
