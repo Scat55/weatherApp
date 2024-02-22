@@ -1,15 +1,16 @@
+import axios from 'axios';
 import { defineStore } from 'pinia';
 
-export const useWeatherAPIStore = defineStore('weatherAPI', () => {
-  const city = ref('');
+const apiKey = import.meta.env.VITE_API_KEY_WEATHER;
 
+export const useWeatherAPIStore = defineStore('weatherAPI', () => {
   const getWeatherInfo = async (citySearch: string) => {
-    city.value = citySearch;
-    alert(city.value);
+    axios.get(
+      `https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${apiKey}`,
+    );
   };
 
   return {
-    city,
     getWeatherInfo,
   };
 });
