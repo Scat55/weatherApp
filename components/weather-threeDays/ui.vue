@@ -15,7 +15,7 @@ getTest(storeCity.city);
 <template>
   <div class="watherThreeDays" v-for="day in weatherInfo.filterData">
     <span class="watherThreeDays__day">{{ day.date._i }}</span>
-    <img :src="day.iconUrl" alt="" />
+    <img class="watherThreeDays__img" :src="day.iconUrl" alt="" />
     <span class="watherThreeDays__temp">{{ day.temp }}</span>
     <p>{{ day.description }}</p>
   </div>
@@ -46,10 +46,31 @@ getTest(storeCity.city);
     align-items: center;
     justify-content: center;
   }
+
+  &__day {
+    @media (max-width: 580px) {
+      font-size: 12px;
+    }
+  }
   &__temp {
     font-size: 32px;
     color: #fff;
     font-weight: bold;
+    @media (max-width: 580px) {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 580px) {
+    padding: 0 5px;
+    width: 98px;
+    height: 120px;
+  }
+
+  @media (max-width: 380px) {
+    padding: 0 5px;
+    width: 80px;
+    height: 120px;
   }
 }
 </style>
