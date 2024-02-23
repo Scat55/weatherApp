@@ -10,7 +10,12 @@ const weatherInfo = useWeatherAPIStore();
     <div class="main-window__info" v-if="weatherInfo.weatherData === null">
       Введите название города
     </div>
-    <WeatherTodayUi v-else />
+    <div v-else>
+      <WeatherTodayUi />
+      <div class="watherThreeDays">
+        <WeatherThreeDaysUi />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -38,5 +43,12 @@ const weatherInfo = useWeatherAPIStore();
     font-weight: bold;
     font-size: 2rem;
   }
+}
+
+.watherThreeDays {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 </style>
