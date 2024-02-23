@@ -42,6 +42,17 @@ const weatherInfo = useWeatherAPIStore();
     color: #fff;
     font-weight: bold;
     font-size: 2rem;
+    @media (max-width: 580px) {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 580px) {
+    width: 348px;
+    margin: 10px 0;
+  }
+  @media (max-width: 390px) {
+    width: 320px;
+    margin: 20px 0;
   }
 }
 

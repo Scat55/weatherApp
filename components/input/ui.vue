@@ -57,6 +57,14 @@ const test = (city: string) => {
     img {
       width: 100%;
     }
+
+    @media (max-width: 580px) {
+      right: 20%;
+    }
+
+    @media (max-width: 390px) {
+      right: 20%;
+    }
   }
 }
 </style>
